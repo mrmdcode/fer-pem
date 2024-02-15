@@ -5,7 +5,7 @@
             <div class="col-4 ">
                 <div class="card">
                     <div class="card-header">
-                        <h3>Create Event</h3>
+                        <h3>Create Device</h3>
                     </div>
                     <div class="card-body">
                         @if (session('success'))
@@ -47,10 +47,10 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        <h3>Events Table</h3>
+                        <h3>Devices Table</h3>
                     </div>
                     <div class="card-body">
-                        <table class="table table-striped">
+                        <table class="table table-striped table-hover">
                             <thead>
                             <th>#</th>
                             <th>device_id</th>
@@ -59,6 +59,7 @@
                             <th>agent_id</th>
                             <th>technition_id</th>
                             <th>create</th>
+                            <th>opt</th>
                             </thead>
                             <tbody>
                             @forelse($devices as $device)
@@ -70,6 +71,7 @@
                                     <td>{{$device->agent_id}}</td>
                                     <td>{{$device->technition_id}}</td>
                                     <td>{{$device->created_at}}</td>
+                                    <td><a href="/{{$device->id}}" class="btn btn-warning">all data</a></td>
 
                                 </tr>
                             @empty
