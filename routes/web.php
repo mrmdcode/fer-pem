@@ -19,8 +19,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get("/devices",[\App\Http\Controllers\DeviceController::class,'index'])->name("devices");
-Route::post("/devices-store",[\App\Http\Controllers\DeviceController::class,'store'])->name("devices.store");
-Route::get("/events",[\App\Http\Controllers\EventController::class,'index'])->name("events");
-Route::post("/events-store",[\App\Http\Controllers\EventController::class,'store'])->name("events.store");
+Route::middleware("auth")->group(function (){
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get("/devices",[\App\Http\Controllers\DeviceController::class,'index'])->name("devices");
+    Route::post("/devices-store",[\App\Http\Controllers\DeviceController::class,'store'])->name("devices.store");
+    Route::get("/events",[\App\Http\Controllers\EventController::class,'index'])->name("events");
+    Route::post("/events-store",[\App\Http\Controllers\EventController::class,'store'])->name("events.store");
+    Route::get("/apis",[\App\Http\Controllers\APIController::class,"index"])->name("apis");
+    Route::post("/apis-store",[\App\Http\Controllers\APIController::class,"store"])->name("apis.store");
+});
+Route::get("/ww",function (){
+
+});
+
+

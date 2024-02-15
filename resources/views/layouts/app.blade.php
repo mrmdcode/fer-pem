@@ -42,8 +42,8 @@
                                 devices
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">API</a>
+                        <li class="nav-item" >
+                            <a href="{{route("apis")}}" class="nav-link">API</a>
                         </li>
                     </ul>
 
