@@ -21,5 +21,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get("/devices",[\App\Http\Controllers\DeviceController::class,'index'])->name("devices");
+Route::post("/devices-store",[\App\Http\Controllers\DeviceController::class,'store'])->name("devices.store");
 Route::get("/events",[\App\Http\Controllers\EventController::class,'index'])->name("events");
 Route::post("/events-store",[\App\Http\Controllers\EventController::class,'store'])->name("events.store");

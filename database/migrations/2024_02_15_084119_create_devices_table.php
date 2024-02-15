@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger("device_id");
             $table->text("description");
-            $table->unsignedBigInteger("custome_id");
+            $table->unsignedBigInteger("customer_id");
             $table->unsignedBigInteger("agent_id");
             $table->unsignedBigInteger("technition_id");
             $table->timestamps();

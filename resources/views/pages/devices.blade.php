@@ -13,17 +13,31 @@
                                 {{ session('success') }}
                             </div>
                         @endif
-                        <form action="{{route("events.store")}}" method="post">
+                        <form action="{{route("devices.store")}}" method="post">
                             @csrf
                             <div class="form-group">
-                                <label for="name">Name : </label>
-                                <input type="text" name="name" id="name" class="form-control">
+                                <label for="device_id">device id : </label>
+                                <input type="text" name="device_id" id="device_id" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="description">description : </label>
+                                <label for="description">Description :</label>
                                 <textarea type="text" name="description" id="description" class="form-control">
                                 </textarea>
                             </div>
+                            <div class="form-group">
+                                <label for="customer_id">customer id :</label>
+                                <input type="text" name="customer_id" id="customer_id" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="agent_id">agent id :</label>
+                                <input type="text" name="agent_id" id="agent_id" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="technition_id">technition id :</label>
+                                <input type="text" name="technition_id" id="technition_id" class="form-control">
+                            </div>
+
+
                             <button type="submit" class="btn btn-outline-success mt-2">create</button>
 
                         </form>
@@ -39,15 +53,24 @@
                         <table class="table table-striped">
                             <thead>
                             <th>#</th>
-                            <th>name</th>
+                            <th>device_id</th>
                             <th>description</th>
+                            <th>customer_id</th>
+                            <th>agent_id</th>
+                            <th>technition_id</th>
+                            <th>create</th>
                             </thead>
                             <tbody>
                             @forelse($devices as $device)
                                 <tr>
-{{--                                    <td>{{$device->id}}</td>--}}
-{{--                                    <td>{{$device->name}}</td>--}}
-{{--                                    <td>{{$device->description}}</td>--}}
+                                    <td>{{$device->id}}</td>
+                                    <td>{{$device->device_id}}</td>
+                                    <td>{{$device->description}}</td>
+                                    <td>{{$device->customer_id}}</td>
+                                    <td>{{$device->agent_id}}</td>
+                                    <td>{{$device->technition_id}}</td>
+                                    <td>{{$device->created_at}}</td>
+
                                 </tr>
                             @empty
 
