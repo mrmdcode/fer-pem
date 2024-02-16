@@ -11,8 +11,6 @@ class APIController extends Controller
 {
     public function index()
     {
-//        $logs = Log::
-//        return $logs;
         $tokens =  auth()->user()->tokens;
         return view("pages.APIsdata",compact("tokens"));
     }

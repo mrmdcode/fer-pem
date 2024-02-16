@@ -33,17 +33,20 @@
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="{{route("events")}}">
-                                events
+                                Events
                             </a>
 
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route("devices")}}">
-                                devices
+                                Devices
                             </a>
                         </li>
                         <li class="nav-item" >
                             <a href="{{route("apis")}}" class="nav-link">API</a>
+                        </li>
+                        <li class="nav-item" >
+                            <a href="{{route("data")}}" class="nav-link">Data</a>
                         </li>
                     </ul>
 

@@ -27,6 +27,7 @@ Route::middleware("auth")->group(function (){
     Route::post("/events-store",[\App\Http\Controllers\EventController::class,'store'])->name("events.store");
     Route::get("/apis",[\App\Http\Controllers\APIController::class,"index"])->name("apis");
     Route::post("/apis-store",[\App\Http\Controllers\APIController::class,"store"])->name("apis.store");
+    Route::get("/data",[\App\Http\Controllers\DataController::class,"index"])->name("data");
 });
 Route::get("/ww",function (){
 
